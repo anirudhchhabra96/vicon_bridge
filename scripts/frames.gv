@@ -1,0 +1,8 @@
+digraph G {
+"vicon/world" -> "vicon/chaser_sat_AC/chaser_sat_AC"[label="Broadcaster: /vicon\nAverage rate: 296.771 Hz\nMost recent transform: 1713900203.904 ( 0.009 sec old)\nBuffer length: 4.994 sec\n"];
+"vicon/world" -> "vicon/target_sat_AC/target_sat_AC"[label="Broadcaster: /vicon\nAverage rate: 296.771 Hz\nMost recent transform: 1713900203.904 ( 0.009 sec old)\nBuffer length: 4.994 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1713900203.913"[ shape=plaintext ] ;
+ }->"vicon/world";
+}
