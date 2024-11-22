@@ -3,7 +3,7 @@
 <launch>
 
   <!-- IP and port on Vicon Windows PC -->
-  <arg name="datastream_hostport" default="192.168.20.2:801"/>
+  <arg name="datastream_hostport" default="192.168.20.19:801"/>
   <!-- Fixed vicon world frame -->
   <arg name="vicon_world_frame" default="/vicon/world"/>
 
@@ -14,3 +14,7 @@
 	</node>
 
 </launch>
+
+
+<!-- HOW TO LAUNCH -->
+<!-- roslaunch vicon_bridge/launch/vicon.launch -->
