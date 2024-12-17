@@ -13,6 +13,24 @@
 		<param name="tf_ref_frame_id" value="$(arg vicon_world_frame)"/>
 	</node>
 
+  <node
+    pkg="vicon_bridge"
+    type="get_vicon_data.py"
+    name="modulenode"
+    args="--topic 'vicon/module4/module4'"
+    output="screen"
+    launch-prefix="python3">
+  </node>
+
+  <node
+    pkg="vicon_bridge"
+    type="get_vicon_data.py"
+    name="portnode"
+    args="--topic 'vicon/port/port'"
+    output="screen"
+    launch-prefix="python3">
+  </node>
+
 </launch>
 
 

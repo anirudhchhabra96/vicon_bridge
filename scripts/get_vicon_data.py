@@ -14,17 +14,17 @@ parser = argparse.ArgumentParser(description="A ROS node to convert Vicon object
 
 # Add arguments for specifying the ROS topic name and the node name
 parser.add_argument('--topic', type=str, required=True, help="The name of the ROS topic to publish to.")
-parser.add_argument('--node', type=str, required=True, help="The name of the ROS node.")
-
+# parser.add_argument('--node', type=str, required=True, help="The name of the ROS node.")
+args, unknown = parser.parse_known_args()
 
 
 # Parse the command-line arguments
-args = parser.parse_args()
+# args = parser.parse_args()
 
 # Get the topic name from the parsed arguments
 # topic_name = args.topic   
 topic_name = args.topic
-node_name = args.node
+# node_name = args.node
 
 
 print(topic_name)
@@ -57,7 +57,7 @@ def timer_callback(event):
 
 def listener():
     
-    rospy.init_node(node_name)
+    rospy.init_node('default_node_name', anonymous=False)
     pose_data = rospy.Subscriber(topic_name, TransformStamped, callback)
     timer = rospy.Timer(rospy.Duration(0.01), timer_callback)
     rospy.spin()
