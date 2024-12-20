@@ -17,7 +17,7 @@
     pkg="vicon_bridge"
     type="get_vicon_data.py"
     name="modulenode"
-    args="--topic 'vicon/module4/module4'"
+    args="--topic 'vicon/module/module'"
     output="screen"
     launch-prefix="python3">
   </node>

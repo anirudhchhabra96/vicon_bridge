@@ -30,7 +30,7 @@ topic_name = args.topic
 print(topic_name)
 last_data = ""
 started = False
-pub = rospy.Publisher(topic_name.split("/")[2], Pose, queue_size=1000)
+pub = rospy.Publisher(topic_name.split("/")[2], Pose, queue_size=1)
 
 def callback(data):
     # print("New message received")
