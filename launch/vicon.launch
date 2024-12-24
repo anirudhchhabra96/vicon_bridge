@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 
+<!-- Sample terminal command:  roslaunch vicon_bridge vicon.launch -->
+
 <launch>
 
   <!-- IP and port on Vicon Windows PC -->
@@ -12,6 +14,24 @@
     <param name="datastream_hostport" value="$(arg datastream_hostport)"/>
 		<param name="tf_ref_frame_id" value="$(arg vicon_world_frame)"/>
 	</node>
+
+
+
+  <node
+    pkg="vicon_bridge"
+    type="get_vicon_data.py"
+    name="topnode"
+    args="--topic 'vicon/top1/top1'"
+    output="screen"
+    launch-prefix="python3" />
+
+  <node
+    pkg="vicon_bridge"
+    type="get_vicon_data.py"
+    name="chasernode"
+    args="--topic 'vicon/chaser_hex/chaser_hex'"
+    output="screen"
+    launch-prefix="python3" />
 
   <node
     pkg="vicon_bridge"
@@ -26,13 +46,10 @@
     pkg="vicon_bridge"
     type="get_vicon_data.py"
     name="portnode"
-    args="--topic 'vicon/port/port'"
+    args="--topic 'vicon/port1/port1'"
     output="screen"
     launch-prefix="python3">
   </node>
 
+
 </launch>
-
-
-<!-- HOW TO LAUNCH -->
-<!-- roslaunch vicon_bridge/launch/vicon.launch -->
