@@ -51,5 +51,16 @@
     launch-prefix="python3">
   </node>
 
+  <node
+    pkg="vicon_bridge"
+    type="get_vicon_data.py"
+    name="satorbitnode"
+    args="--topic 'vicon/satorbit/satorbit'"
+    output="screen"
+    launch-prefix="python3">
+  </node>
+
+  <!-- <node name="cube_visualizer" pkg="vicon_bridge" type="viconplot_satorbit.py" output="screen"/> -->
+
 
 </launch>
